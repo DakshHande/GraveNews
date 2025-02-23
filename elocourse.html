@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Achieve a Good FIDE Elo - GraveNews</title>
+  <style>
+    /* 2000s-era CSS styling */
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #f0f0f0;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: right;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0;
+      letter-spacing: 0.15em;
+      animation: typing 3.5s steps(40, end);
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    nav {
+      text-align: center;
+      padding: 10px;
+      background-color: #444;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .content {
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .chart-container {
+      margin: 20px 0;
+    }
+
+    .image-placeholder {
+      background-color: #ddd;
+      padding: 20px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .image-placeholder img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .course-description {
+      margin-bottom: 20px;
+    }
+  </style>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>GraveNews</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+
+  <main>
+    <div class="content">
+      <h2>How to Achieve a Good FIDE Elo</h2>
+      <div class="course-description">
+        <p>
+          Achieving a good FIDE Elo rating is the dream of every chess player. It’s not just about talent; it’s about strategy, 
+          discipline, and relentless improvement. This course will reveal the <strong>latest tricks and tips</strong> to skyrocket 
+          your FIDE Elo and join the ranks of the chess elite.
+        </p>
+        <p>
+          From mastering openings to dominating endgames, we’ll cover every aspect of chess improvement. You’ll learn how to 
+          analyze your games, train effectively, and maintain peak performance under pressure. Whether you’re aiming for 2000 
+          or 2500, this course will guide you every step of the way.
+        </p>
+      </div>
+
+      <h3>Top-Rated Players and Their FIDE Ratings (Last 40 Years)</h3>
+      <div class="chart-container">
+        <canvas id="fideChart"></canvas>
+      </div>
+
+      <h3>Famous Top-Rated Players in History</h3>
+      <div class="image-placeholder">
+        <img src="https://via.placeholder.com/800x400.png?text=Famous+Top-Rated+Players+Placeholder" alt="Famous Top-Rated Players">
+        <p>Image placeholder for famous top-rated players like Garry Kasparov, Magnus Carlsen, and Bobby Fischer.</p>
+      </div>
+
+      <h3>Key Strategies to Improve Your FIDE Elo</h3>
+      <ul>
+        <li><strong>Study Openings</strong>: Master a few openings deeply instead of memorizing many superficially.</li>
+        <li><strong>Analyze Your Games</strong>: Learn from your mistakes and identify patterns in your play.</li>
+        <li><strong>Endgame Practice</strong>: Focus on endgames to convert winning positions and save draws.</li>
+        <li><strong>Tactical Training</strong>: Solve puzzles daily to sharpen your tactical vision.</li>
+        <li><strong>Mental Toughness</strong>: Stay calm under pressure and avoid tilting during games.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 GraveNews. All rights reserved.
+  </footer>
+
+  <script>
+    // Data for the bar chart (example data for last 40 years)
+    const years = Array.from({ length: 40 }, (_, i) => 1985 + i);
+    const fideRatings = years.map(() => Math.floor(Math.random() * 500) + 2500); // Random data for demonstration
+
+    // Chart.js configuration
+    const ctx = document.getElementById('fideChart').getContext('2d');
+    const fideChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: years,
+        datasets: [{
+          label: 'Top FIDE Ratings Over the Years',
+          data: fideRatings,
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false,
+            title: {
+              display: true,
+              text: 'FIDE Rating'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Year'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
