@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Beat Sicilian with White - GraveNews</title>
+  <style>
+    /* 2000s-era CSS styling */
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #f0f0f0;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: right;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0;
+      letter-spacing: 0.15em;
+      animation: typing 3.5s steps(40, end);
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    nav {
+      text-align: center;
+      padding: 10px;
+      background-color: #444;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .content {
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .chart-container {
+      margin: 20px 0;
+    }
+
+    .image-placeholder {
+      background-color: #ddd;
+      padding: 20px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .image-placeholder img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .course-description {
+      margin-bottom: 20px;
+    }
+  </style>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>GraveNews</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+
+  <main>
+    <div class="content">
+      <h2>How to Beat Sicilian with White</h2>
+      <div class="course-description">
+        <p>
+          The Sicilian Defense is one of the most popular and aggressive responses to 1.e4. But fear not! With the right strategies, 
+          you can crush the Sicilian and dominate the board as White. This course will reveal the <strong>latest tricks and tips</strong> 
+          to dismantle the Sicilian Defense and leave your opponents in awe.
+        </p>
+        <p>
+          From the explosive Open Sicilian to the positional Closed Sicilian, we’ll explore every weapon in your arsenal. 
+          You’ll learn how to exploit weaknesses, control the center, and launch devastating attacks. Whether you’re facing the 
+          Najdorf, Dragon, or Sveshnikov, this course has you covered.
+        </p>
+      </div>
+
+      <h3>Top Games Played in the Last 20 Years</h3>
+      <div class="chart-container">
+        <canvas id="sicilianChart"></canvas>
+      </div>
+
+      <h3>Famous Sicilian Games in History</h3>
+      <div class="image-placeholder">
+        <img src="https://via.placeholder.com/800x400.png?text=Famous+Sicilian+Games+Placeholder" alt="Famous Sicilian Games">
+        <p>Image placeholder for famous Sicilian games like Fischer vs. Myagmarsuren, 1967, and Kasparov vs. Topalov, 1999.</p>
+      </div>
+
+      <h3>Key Strategies to Beat the Sicilian</h3>
+      <ul>
+        <li><strong>Control the Center</strong>: Dominate the d4 and e4 squares to limit Black’s counterplay.</li>
+        <li><strong>Exploit the c-file</strong>: Open the c-file and use it to launch a rook attack.</li>
+        <li><strong>Kingside Attack</strong>: Push your pawns on the kingside and unleash a deadly assault.</li>
+        <li><strong>Piece Activity</strong>: Keep your pieces active and coordinated to maintain pressure.</li>
+        <li><strong>Endgame Mastery</strong>: Transition into favorable endgames where your pawn structure shines.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 GraveNews. All rights reserved.
+  </footer>
+
+  <script>
+    // Data for the bar chart (example data for last 20 years)
+    const years = Array.from({ length: 20 }, (_, i) => 2005 + i);
+    const gamesPlayed = years.map(() => Math.floor(Math.random() * 1000) + 500); // Random data for demonstration
+
+    // Chart.js configuration
+    const ctx = document.getElementById('sicilianChart').getContext('2d');
+    const sicilianChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: years,
+        datasets: [{
+          label: 'Number of Top Sicilian Games Played',
+          data: gamesPlayed,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Number of Games'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Year'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
